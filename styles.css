@@ -465,6 +465,21 @@ img {
   text-align: center;
 }
 
+.site-credit {
+  position: relative;
+  margin: -14px 0 0;
+  padding: 0 28px 28px;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.82rem;
+  text-align: center;
+}
+
+.site-credit a {
+  color: rgba(255, 255, 255, 0.72);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
 @media (max-width: 960px) {
   .hero,
   .about-grid,
