@@ -1,0 +1,531 @@
+:root {
+  --bg: #eef3f8;
+  --surface: rgba(255, 255, 255, 0.84);
+  --surface-strong: #ffffff;
+  --text: #12324f;
+  --muted: #5f7187;
+  --blue: #2682ff;
+  --navy: #17345f;
+  --navy-deep: #0f2341;
+  --line: rgba(18, 50, 79, 0.12);
+  --shadow: 0 24px 70px rgba(18, 50, 79, 0.14);
+  --radius-xl: 32px;
+  --radius-lg: 22px;
+  --radius-md: 16px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  font-family: "Open Sans", system-ui, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(38, 130, 255, 0.14), transparent 28%),
+    radial-gradient(circle at 85% 12%, rgba(23, 52, 95, 0.1), transparent 30%),
+    linear-gradient(180deg, #f8fbfe 0%, var(--bg) 100%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.page-shell {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 18px 0 36px;
+}
+
+.site-header {
+  position: sticky;
+  top: 12px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 10px 28px rgba(18, 50, 79, 0.08);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.brand img {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+}
+
+.brand strong,
+.section-heading h2,
+.hero h1,
+.appointment-card h2,
+.cta-banner h2,
+.site-footer h2 {
+  font-family: "Montserrat", system-ui, sans-serif;
+  letter-spacing: -0.03em;
+}
+
+.brand strong {
+  display: block;
+  font-size: 1rem;
+}
+
+.brand small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 0.95rem;
+}
+
+.site-nav a {
+  color: var(--muted);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 28px;
+  padding: 36px 0 24px;
+  align-items: stretch;
+}
+
+.hero-copy,
+.appointment-card,
+.section-card,
+.cta-banner,
+.site-footer {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+}
+
+.hero-copy {
+  padding: clamp(26px, 4vw, 54px);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.78)),
+    url("assets/plumber-14.jpg") right top / cover no-repeat;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--blue);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(3rem, 7vw, 5.8rem);
+  line-height: 0.95;
+}
+
+.lede {
+  max-width: 34rem;
+  margin: 20px 0 0;
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  line-height: 1.7;
+}
+
+.supporting {
+  max-width: 40rem;
+  margin: 14px 0 0;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 22px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button-primary {
+  color: #fff;
+  background: linear-gradient(135deg, #2a88ff, #2168df);
+  box-shadow: 0 18px 34px rgba(38, 130, 255, 0.24);
+}
+
+.button-secondary {
+  color: var(--navy);
+  background: rgba(255, 255, 255, 0.74);
+  border-color: rgba(18, 50, 79, 0.12);
+}
+
+.button-inverse {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.24);
+}
+
+.button-full {
+  width: 100%;
+}
+
+.hero-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0;
+  margin: 26px 0 0;
+  list-style: none;
+}
+
+.hero-facts li {
+  padding: 10px 14px;
+  border-radius: 999px;
+  color: var(--navy);
+  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid rgba(18, 50, 79, 0.08);
+}
+
+.appointment-card {
+  display: grid;
+  grid-template-rows: 250px 1fr;
+  background: var(--surface-strong);
+  border: 1px solid rgba(18, 50, 79, 0.08);
+}
+
+.appointment-card__media {
+  min-height: 250px;
+  background: linear-gradient(180deg, rgba(23, 52, 95, 0.06), rgba(23, 52, 95, 0.18));
+}
+
+.appointment-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.appointment-card__body {
+  padding: 24px;
+}
+
+.card-kicker {
+  margin: 0;
+  color: var(--blue);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.appointment-card h2,
+.section-heading h2,
+.cta-banner h2,
+.site-footer h2 {
+  margin: 10px 0 0;
+  font-size: clamp(1.6rem, 2.8vw, 2.5rem);
+  line-height: 1.1;
+}
+
+.appointment-card p,
+.section-card p,
+.site-footer p {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.quote-form {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.quote-form label {
+  display: grid;
+  gap: 8px;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.quote-form span {
+  color: var(--navy);
+}
+
+.quote-form input,
+.quote-form textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px 14px;
+  font: inherit;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--text);
+}
+
+.quote-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.section-card,
+.cta-banner {
+  margin-top: 26px;
+  padding: clamp(24px, 4vw, 42px);
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(10px);
+}
+
+.section-heading {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 22px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 24px;
+}
+
+.about-grid > div:first-child {
+  font-size: 1.05rem;
+}
+
+.info-panel {
+  padding: 22px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(23, 52, 95, 0.06), rgba(38, 130, 255, 0.08));
+  border: 1px solid rgba(18, 50, 79, 0.08);
+}
+
+.info-panel h3 {
+  margin: 0 0 6px;
+  font-family: "Montserrat", system-ui, sans-serif;
+}
+
+.info-panel p {
+  margin: 0 0 14px;
+}
+
+.testimonials {
+  padding: 32px 0 0;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.quote-card {
+  min-height: 160px;
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(180deg, rgba(23, 52, 95, 0.96), rgba(18, 50, 79, 0.9)),
+    url("assets/plumber-08.jpg") center/cover no-repeat;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 18px 40px rgba(15, 35, 65, 0.2);
+}
+
+.quote-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 1.02rem;
+  line-height: 1.8;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.service-card {
+  display: grid;
+  gap: 14px;
+  justify-items: center;
+  padding: 24px 20px;
+  text-align: center;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.74);
+  border: 1px solid rgba(18, 50, 79, 0.08);
+}
+
+.service-card img {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+}
+
+.service-card h3 {
+  margin: 0;
+  font-family: "Montserrat", system-ui, sans-serif;
+}
+
+.cta-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 26px;
+  color: #fff;
+  background:
+    linear-gradient(135deg, rgba(23, 52, 95, 0.98), rgba(38, 130, 255, 0.88)),
+    url("assets/plumber-08.jpg") center/cover no-repeat;
+}
+
+.cta-banner .eyebrow,
+.cta-banner h2 {
+  color: #fff;
+}
+
+.site-footer {
+  color: #fff;
+  background:
+    linear-gradient(180deg, rgba(15, 35, 65, 0.92), rgba(15, 35, 65, 0.98)),
+    url("assets/plumber-08.jpg") center/cover no-repeat;
+}
+
+.footer-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 35, 65, 0.28), rgba(15, 35, 65, 0.1));
+}
+
+.footer-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 24px;
+  padding: clamp(28px, 4vw, 48px);
+}
+
+.footer-inner p {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.footer-contacts {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  padding: 18px 20px;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-contacts a,
+.footer-contacts span {
+  color: #fff;
+  font-weight: 700;
+}
+
+.copyright {
+  position: relative;
+  margin: 0;
+  padding: 0 28px 28px;
+  color: rgba(255, 255, 255, 0.62);
+  text-align: center;
+}
+
+@media (max-width: 960px) {
+  .hero,
+  .about-grid,
+  .footer-inner,
+  .cta-banner {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-grid,
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .page-shell {
+    width: min(100% - 20px, 1180px);
+    padding-top: 10px;
+  }
+
+  .site-header {
+    position: static;
+    border-radius: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .site-nav {
+    gap: 12px;
+  }
+
+  .hero {
+    padding-top: 18px;
+  }
+
+  .hero-copy {
+    padding: 22px;
+  }
+
+  .appointment-card {
+    grid-template-rows: 200px 1fr;
+  }
+
+  .testimonial-grid,
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-banner .hero-actions {
+    width: 100%;
+  }
+
+  .button {
+    width: 100%;
+  }
+}
