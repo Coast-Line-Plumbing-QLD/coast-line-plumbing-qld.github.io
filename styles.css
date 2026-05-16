@@ -466,18 +466,24 @@ img {
 }
 
 .site-credit {
-  position: relative;
-  margin: -14px 0 0;
-  padding: 0 28px 28px;
+  margin: 12px 0 0;
   color: rgba(255, 255, 255, 0.45);
   font-size: 0.82rem;
   text-align: center;
+}
+
+.site-credit--below {
+  color: rgba(18, 50, 79, 0.56);
 }
 
 .site-credit a {
   color: rgba(255, 255, 255, 0.72);
   text-decoration: underline;
   text-underline-offset: 0.18em;
+}
+
+.site-credit--below a {
+  color: rgba(18, 50, 79, 0.82);
 }
 
 @media (max-width: 960px) {
