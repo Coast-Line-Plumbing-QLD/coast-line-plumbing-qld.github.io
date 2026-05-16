@@ -472,8 +472,10 @@ img {
   text-align: center;
 }
 
-.site-credit--below {
+.site-credit--page {
   color: rgba(18, 50, 79, 0.56);
+  margin: 14px 0 0;
+  padding-bottom: 2px;
 }
 
 .site-credit a {
@@ -482,7 +484,7 @@ img {
   text-underline-offset: 0.18em;
 }
 
-.site-credit--below a {
+.site-credit--page a {
   color: rgba(18, 50, 79, 0.82);
 }
 
